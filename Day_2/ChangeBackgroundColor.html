@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Background Color</title>
+<style>
+  .colorButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+  }
+</style>
+</head>
+<body>
+
+  <button class="colorButton" onclick="changeColor('red')">Red</button>
+  <button class="colorButton" onclick="changeColor('green')">Green</button>
+  <button class="colorButton" onclick="changeColor('blue')">Blue</button>
+
+<script>
+  function changeColor(color) {
+    document.body.style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>
