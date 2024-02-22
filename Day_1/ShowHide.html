@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show/Hide Div Example</title>
+  <style>
+    /* Style to hide the div by default */
+    #myDiv {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggleButton">Show/Hide</button>
+  <div id="myDiv">
+    <!-- Content of the div -->
+    This is a div element.
+  </div>
+
+  <script>
+    var button = document.getElementById('toggleButton');
+    var div = document.getElementById('myDiv');
+
+    button.addEventListener('click', function() {
+      if (div.style.display === 'none') {
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

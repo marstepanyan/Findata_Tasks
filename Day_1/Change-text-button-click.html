@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click Example</title>
+</head>
+<body>
+
+  <button id="changeTextBtn">Change Text</button>
+  <p id="textContent">Original Text</p>
+
+  <script>
+    var button = document.getElementById('changeTextBtn');
+    var paragraph = document.getElementById('textContent');
+
+    button.addEventListener('click', function() {
+      paragraph.textContent = 'New Text';
+    });
+  </script>
+
+</body>
+</html>
