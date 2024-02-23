@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Form Validation</title>
+</head>
+<body>
+
+  <form id="emailForm">
+    <label for="emailInput">Email Address:</label>
+    <input type="email" id="emailInput" name="emailInput">
+    <button type="submit" id="submitButton">Submit</button>
+  </form>
+
+<script>
+  document.getElementById("emailForm").addEventListener("submit", function() {
+    var emailInput = document.getElementById("emailInput").value;
+    if (emailInput.trim() === "") {
+      alert("Please enter an email address");
+    }
+  });
+</script>
+
+</body>
+</html>

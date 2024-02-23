@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click Counter</title>
+  <style>
+  #clickButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+  }
 
+  #displayArea {
+    font-size: 20px;
+    margin: 15px;
+  }
+  </style>
+</head>
+<body>
+
+  <button id="clickButton">Click me</button>
+  <div id="displayArea">Number of clicks: <span id="clickCount">0</span></div>
+
+<script>
+  var clickButton = document.getElementById("clickButton");
+  var clickCountDisplay = document.getElementById("clickCount");
+  var clickCount = 0;
+
+  clickButton.addEventListener("click", function() {
+    clickCount++;
+    clickCountDisplay.textContent = clickCount;
+  });
+</script>
+
+</body>
+</html>
