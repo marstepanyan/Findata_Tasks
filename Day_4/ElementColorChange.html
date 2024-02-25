@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Element Color Change on Hover</title>
+  <style>
+    .item {
+      padding: 10px;
+      margin: 5px;
+      background-color: lightblue;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
+
+<script>
+  // Get all list items
+  var items = document.querySelectorAll(".item");
+
+  items.forEach(function(item) {
+    item.addEventListener("mouseover", function() {
+      this.style.backgroundColor = "green";
+    });
+
+    item.addEventListener("mouseout", function() {
+      this.style.backgroundColor = "lightblue";
+    });
+  });
+</script>
+
+</body>
+</html>

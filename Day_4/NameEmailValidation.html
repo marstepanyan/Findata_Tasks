@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name&Email Form Validation</title>
+  <style>
+    .error-message {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
 
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span class="error-message" id="nameError"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span class="error-message" id="emailError"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Reset error messages
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name is required";
+      return;
+    }
+
+    if (email === "") {
+      document.getElementById("emailError").textContent = "Email is required";
+      return;
+    }
+  });
+</script>
+
+</body>
+</html>
