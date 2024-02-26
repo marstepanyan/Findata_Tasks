@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabbed Interface</title>
+<style>
+  .tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: lightblue;
+    border: 1px solid white;
+    border-radius: 5px 5px 0 0;
+  }
 
+  .active-tab {
+    background-color: green;
+  }
+
+  .tab-content {
+    padding: 20px;
+    border: 1px solid black;
+    display: none;
+  }
+
+</style>
+</head>
+<body>
+
+  <div id="tabs">
+    <div class="tab" data-tab="tab1">Tab 1</div>
+    <div class="tab" data-tab="tab2">Tab 2</div>
+    <div class="tab" data-tab="tab3">Tab 3</div>
+  </div>
+
+  <div id="tab-content">
+    <div class="tab-content" id="tab1-content">Content for Tab 1</div>
+    <div class="tab-content" id="tab2-content">Content for Tab 2</div>
+    <div class="tab-content" id="tab3-content">Content for Tab 3</div>
+  </div>
+
+<script>
+  var tabContent = {
+    tab1: "Here is Content for Tab 1",
+    tab2: "Here is Content for Tab 2",
+    tab3: "Here is Content for Tab 3"
+  };
+
+  // all tab elements
+  var tabs = document.querySelectorAll('.tab');
+
+  // add click event listeners to tabs
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      tabs.forEach(function(tab) {
+        tab.classList.remove('active-tab');
+      });
+
+      // Add active class to clicked tab
+      this.classList.add('active-tab');
+
+      // Hide all tab contents
+      var tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(function(content) {
+        content.style.display = 'none';
+      });
+
+      // Get the clicked tab
+      var tabId = this.getAttribute('data-tab');
+
+      // Display corresponding tab content
+      document.getElementById(tabId + '-content').style.display = 'block';
+
+      // Load content dynamically from tabContent
+      document.getElementById(tabId + '-content').textContent = tabContent[tabId];
+    });
+  });
+
+</script>
+
+</body>
+</html>
